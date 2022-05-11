@@ -35,6 +35,7 @@ const ResourceDisplay = (props) => {
 
     
     useEffect(() => {
+        if (sWObject.homeworld) {
         axios.get(sWObject.homeworld)
             .then(response => {
                 console.log('homeworld api response: ', response.data);
@@ -43,6 +44,7 @@ const ResourceDisplay = (props) => {
             .catch(err => {
                 console.log(err)
             })
+        }
 
     }, [sWObject.homeworld]);
 
